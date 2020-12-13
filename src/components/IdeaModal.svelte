@@ -8,6 +8,10 @@
         modalActive = !modalActive
     }
 
+    function checkChanges() {
+        unsavedChanges = JSON.stringify(originalIdea) !== JSON.stringify(idea)
+    }
+
     async function saveIdea() {
         const response = await fetch(`http://localhost:5000/${idea._id}`, {
             method: "PUT",
@@ -20,11 +24,13 @@
                 done: idea.done
             })
         })
-        originalIdea = JSON.parse(JSON.stringify(idea));
+        originalIdea = JSON.parse(JSON.stringify(idea))
+        checkChanges()
     }
 
     function closeIdea() {
         idea = JSON.parse(JSON.stringify(originalIdea))
+        checkChanges()
         toggleModal()
     }
 
@@ -36,7 +42,7 @@
     <div class="modal-background" on:click={closeIdea}></div>
     <div class="modal-content">
         <div class="box">
-            <form>
+            <form on:change={checkChanges} on:input={checkChanges}>
                 <div class="field">
                     <label for="idea" class="label">idea</label>
                     <div class="control">
@@ -58,7 +64,14 @@
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
-                      <button on:click={saveIdea} class="button is-primary" type="button">save</button>
+                      <button on:click={saveIdea} class="button is-primary" type="button">
+                        <span class="icon">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                        </span>
+                        <span>save {#if unsavedChanges}
+                            (unsaved changes)
+                        {/if}</span>
+                    </button>
                     </div>
                     <div class="control">
                       <button on:click={closeIdea} class="button is-light" type="button">close</button>
