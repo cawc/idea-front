@@ -25,7 +25,6 @@
 <ul>
 {#each ideas as idea}
     <li> <IdeaModal idea={idea} /> </li>
-    <!--<li><a rel=prefetch href="ideas/{idea._id}">{idea.idea}</a></li>-->
 {/each}
 </ul>
 

@@ -12,9 +12,9 @@
 </script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>idea</title>
 </svelte:head>
 
 <h1 class="title">idea app</h1>
 
-<p>Try {idea}</p> <button on:click={roll} class="button is-light" type="button">re-roll</button>
+<p>Try {idea}</p> <button on:click={roll} class="button is-light" type="button">roll</button>

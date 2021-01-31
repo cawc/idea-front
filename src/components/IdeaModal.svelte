@@ -1,6 +1,6 @@
 <script>
     export let idea
-    let originalIdea = JSON.parse(JSON.stringify(idea));
+    let originalIdea = JSON.parse(JSON.stringify(idea))
     let modalActive = false
     let unsavedChanges = false
 
@@ -42,7 +42,7 @@
     <div class="modal-background" on:click={closeIdea}></div>
     <div class="modal-content">
         <div class="box">
-            <form on:change={checkChanges} on:input={checkChanges}>
+            <form on:input={checkChanges} on:change={checkChanges}>
                 <div class="field">
                     <label for="idea" class="label">idea</label>
                     <div class="control">
