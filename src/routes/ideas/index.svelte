@@ -1,6 +1,6 @@
 <script context="module">
     export async function preload(page, session) {
-        const res = await this.fetch('http://localhost:5000')
+        const res = await this.fetch('http://localhost:5000/idea/')
         const ideas = await res.json()
         return { ideas }
     }
@@ -19,7 +19,7 @@
     idea overview
 </h1>
 <p class="subtitle">
-    overview all ideas
+    overview all ideas / <button class="button is-primary is-small" aria-label="close">add new</button>
 </p>
 
 <ul>

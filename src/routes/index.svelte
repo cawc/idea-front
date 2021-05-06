@@ -1,8 +1,7 @@
 <script>
 	export let idea = '...'
 	async function roll(){
-		console.log('rolling')
-		const response = await fetch(`http://localhost:5000/random`, {
+		const response = await fetch(`http://localhost:5000/idea/random`, {
             method: "GET"
 		})
 		const ideaJson = await response.json()

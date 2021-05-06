@@ -13,7 +13,7 @@
     }
 
     async function saveIdea() {
-        const response = await fetch(`http://localhost:5000/${idea._id}`, {
+        const response = await fetch(`http://localhost:5000/idea/${idea._id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
