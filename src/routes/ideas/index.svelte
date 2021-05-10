@@ -1,6 +1,12 @@
 <script context="module">
     export async function preload(page, session) {
-        const res = await this.fetch('http://localhost:5000/idea/')
+        const res = await this.fetch('/ideas.json', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
         const ideas = await res.json()
         return { ideas }
     }
