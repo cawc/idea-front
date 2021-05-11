@@ -19,6 +19,7 @@
 			<a class="navbar-item" class:is-active="{segment === undefined}" href=".">home</a>
 			<a class="navbar-item" class:is-active="{segment === 'about'}" href="about">about</a>
 			<a class="navbar-item" class:is-active="{segment === 'ideas'}" href="ideas">ideas</a>
+			<a class="navbar-item" class:is-active="{segment === 'login'}" href="/auth/login">login</a>
 		</div>
 	</div>
 </nav>

@@ -8,7 +8,7 @@ export async function post(req, res) {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({ token: req.session.refreshToken })
+            body: JSON.stringify({ refreshToken: req.session.refreshToken })
         })
 
         const parsed = await result.json()
